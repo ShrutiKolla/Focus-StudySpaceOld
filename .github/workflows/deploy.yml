@@ -13,8 +13,6 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v2
-        with:
-          submodules: 'recursive'
 
       - name: Setup Node
         uses: actions/setup-node@v2
@@ -22,7 +20,7 @@ jobs:
           node-version: 16
 
       - name: Install dependencies
-        run: npm install
+        run: npm install  
 
       - name: Build project
         run: npm run build
@@ -32,6 +30,11 @@ jobs:
         with:
           name: production-files
           path: ./dist
+      - name: Setup Node for Deploy
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
 
   deploy:
     name: Deploy
@@ -45,11 +48,6 @@ jobs:
         with:
           name: production-files
           path: ./dist
-
-      - name: Setup Node for Deploy
-        uses: actions/setup-node@v2
-        with:
-          node-version: 16
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
