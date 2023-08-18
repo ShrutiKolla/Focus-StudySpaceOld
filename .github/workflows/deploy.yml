@@ -19,7 +19,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
-          node-version: 12
+          node-version: 16
 
       - name: Install dependencies
         run: npm install
@@ -46,9 +46,13 @@ jobs:
           name: production-files
           path: ./dist
 
-      - name: Deploy to GitHub Pages
+      - name: Setup Node for Deploy
         uses: actions/setup-node@v2
         with:
           node-version: 16
-      - run: npm install # Install necessary dependencies for deployment scripts
-      - run: node your-deployment-script.js # Run your deployment script using Node.js 16
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
