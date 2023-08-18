@@ -30,6 +30,11 @@ jobs:
         with:
           name: production-files
           path: ./dist
+      - name: Setup Node for Deploy
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
 
   deploy:
     name: Deploy
