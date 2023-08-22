@@ -1,0 +1,10 @@
+.taskInp input{
+    min-width:500px;
+    margin: 10px 0;
+    padding: 20px;
+    border: none;
+    border-radius: 15px;
+    background-color: rgba(255,255, 255, 0.5);
+    color: white;
+    text-shadow: 1px 1px 3px black;
+}

@@ -1,0 +1,27 @@
+.tasksDiv {
+    margin: 50px;
+}
+
+.head {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.head > button {
+    border: none;
+    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255,255, 255, 0.6);
+     font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+    text-shadow: 1px 1px 7px rgba(0,0,0, 0.4);
+}
+
+.head p {
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
+}
