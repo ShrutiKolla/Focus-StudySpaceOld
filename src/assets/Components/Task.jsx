@@ -25,6 +25,7 @@ export default function Task({ idx, list, setList }) {
                 value={list[idx].val}
                 onChange={handleChange}
             />
+            <input type="text" value="25:00"/>
             {/* <p>hello</p> */}
         </div>
     );
