@@ -1,12 +1,38 @@
-.taskInp input{
-    min-width:500px;
+.taskBox {
+    width:50%;
     margin: 10px 0;
     padding: 20px;
     border: none;
     border-radius: 15px;
     background-color: rgba(255,255, 255, 0.5);
+    display: flex;
+}
+.taskInp, .taskDuration{
     color: white;
-    text-shadow: 1px 1px 3px rgba(0,0,0, 0.5);
-
     font-size: 20px;
+    text-shadow: 1px 1px 3px rgba(0,0,0, 0.5);
+    background: none;
+    border: none;
+}
+.taskInp {
+    margin-right: auto;
+    width: 65%;
+    overflow-y: auto;
+}
+.taskDuration {
+    margin-right: auto;
+    font-size: 18px;
+    width: 20%;
+}
+.taskDuration option {
+  color: black;
+  font-size: 16px;
+  margin: 35px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0);
+}
+.startBtn {
+    border-radius: 5px;
+    border: none;
+    width: 10%;
 }

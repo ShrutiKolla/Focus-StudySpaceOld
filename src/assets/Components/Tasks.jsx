@@ -6,13 +6,11 @@ import tasksCss from "../css/tasks.module.css";
 // components
 import Task from "./Task.jsx"
 export default function Tasks() {
-
     const [list, setList] = useState([]);
-
     const addTask = () => {
         setList(prev => {
             const arr = [...prev];
-            arr.push({val : "type your task here"});
+            arr.push({text : "type your task here", time : 25});
             return arr;
         })
     }
@@ -30,7 +28,7 @@ export default function Tasks() {
                 <p>Tasks</p>
                 <button onClick={addTask}>+</button>
             </div>
-            {tasksDiv}
+            {list.length == 0 ? <p>u dont have any tasks</p> : tasksDiv}
         </div>
     );
 }
