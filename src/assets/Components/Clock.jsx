@@ -20,7 +20,7 @@ export default function Clock() {
     }, [])
     return (
         <div className={clockCss.clock}>
-            <div>{time.hours}:{time.minutes}:{time.seconds}</div>
+            <div>{time.hours} : {time.minutes}</div>
         </div>
     );
 }

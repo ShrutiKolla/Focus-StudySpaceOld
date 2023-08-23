@@ -8,17 +8,21 @@ import Task from "./Task.jsx"
 export default function Tasks() {
 
     const [list, setList] = useState([]);
-    // console.log(list)
 
     const addTask = () => {
         setList(prev => {
             const arr = [...prev];
-            arr.push({});
+            arr.push({val : "type your task here"});
             return arr;
         })
     }
-    const tasksDiv = list.map(x => {
-        return <Task key={x}/>
+    const tasksDiv = list.map((x, idx) => {
+        return <Task
+            key={idx}
+            idx={idx}
+            list = {list}
+            setList = {setList}
+        />
     });
     return (
         <div className={tasksCss.tasksDiv}>
