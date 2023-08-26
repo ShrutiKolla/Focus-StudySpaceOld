@@ -1,7 +1,13 @@
 import React from 'react';
 
-export default function FocusPage(props) {
+export default function FocusPage({ list, setList, currTask, setCurrTask }) {
+    console.log(list[currTask].text)
     return (
-        <>start ur work!!</>
+        <>
+            <p>
+                start ur work!! {currTask}
+            </p>
+            <p>{list[currTask].text}</p>
+        </>
     );
 }

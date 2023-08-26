@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 // css
 import taskCss from "../css/task.module.css";
 
-// components
-import FocusPage from "../Components/FocusPage.jsx";
-export default function Task({ idx, list, setList }) {
+export default function Task({ idx, list, setList, currTask, setCurrTask }) {
 
-    // console.log(list[idx], list);
-    const [showFocusPage, setShow] = useState(false);
+    const redirect = useNavigate();
     const handleClick = () => {
+        setCurrTask(idx);
+        redirect('/Focus-StudySpace/taskPage');
     }
 
     const handleChange = (e) => {

@@ -6,12 +6,11 @@ import { useNavigate } from "react-router-dom";
 
 // components
 import Task from "./Task.jsx"
-export default function Tasks() {
-    const [list, setList] = useState([]);
+export default function Tasks({ list, setList, currTask, setCurrTask }) {
     const addTask = () => {
         setList(prev => {
             const arr = [...prev];
-            arr.push({text : "type your task here", time : 25});
+            arr.push({ text: "type your task here", time: 25 });
             return arr;
         })
     }
@@ -19,8 +18,11 @@ export default function Tasks() {
         return <Task
             key={idx}
             idx={idx}
-            list = {list}
-            setList = {setList}
+            list={list}
+            setList={setList}
+            currTask={currTask}
+            setCurrTask={setCurrTask}
+
         />
     });
     return (
