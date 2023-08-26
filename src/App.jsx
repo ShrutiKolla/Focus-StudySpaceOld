@@ -1,6 +1,6 @@
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 // components
 // import Nav from "./assets/Components/Nav.jsx"
@@ -11,8 +11,15 @@ import FocusPage from './assets/Components/FocusPage'
 
 function App() {
 
-  const [list, setList] = useState([]);
-  const [currTask, setCurrTask] = useState();
+  const [list, setList] = useState(JSON.parse(localStorage.getItem('list')) || []);
+  const [currTask, setCurrTask] = useState(JSON.parse(localStorage.getItem('currTask')));
+
+  useEffect(() => {
+    localStorage.setItem('list', JSON.stringify(list));
+  }, [list])
+  useEffect(() => {
+    localStorage.setItem('currTask', currTask);
+  }, [currTask])
   return (
     <>
       <Routes>
