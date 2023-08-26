@@ -14,6 +14,14 @@ export default function Tasks({ list, setList, currTask, setCurrTask }) {
             return arr;
         })
     }
+
+    const handleDelete = (idx) => {
+        setList(prev => {
+            let arr = [...prev];
+            arr.splice(idx, 1);
+            return arr;
+        })
+    }
     const tasksDiv = list.map((x, idx) => {
         return <Task
             key={idx}
@@ -22,7 +30,7 @@ export default function Tasks({ list, setList, currTask, setCurrTask }) {
             setList={setList}
             currTask={currTask}
             setCurrTask={setCurrTask}
-
+            handleDelete={() => { handleDelete(idx) }}
         />
     });
     return (

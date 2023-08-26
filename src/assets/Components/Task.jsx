@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 // css
 import taskCss from "../css/task.module.css";
 
-export default function Task({ idx, list, setList, currTask, setCurrTask }) {
+export default function Task({ idx, list, setList, currTask, setCurrTask, handleDelete }) {
 
     const redirect = useNavigate();
     const handleClick = () => {
@@ -24,6 +24,7 @@ export default function Task({ idx, list, setList, currTask, setCurrTask }) {
             return listarr;
         })
     }
+
     return (
         <div>
             <div className={taskCss.taskBox}>
@@ -51,7 +52,7 @@ export default function Task({ idx, list, setList, currTask, setCurrTask }) {
                     className={taskCss.startBtn}
                     onClick={handleClick}
                 >Start</button>
-                <svg className={taskCss.delIcon} viewBox="0 0 24 24"
+                <svg onClick={handleDelete} className={taskCss.delIcon} viewBox="0 0 24 24"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
