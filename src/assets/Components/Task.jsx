@@ -13,7 +13,7 @@ export default function Task({ idx, list, setList, currTask, setCurrTask, handle
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        console.log(name, value)
+        // console.log(name, value)
         setList(prev => {
             const listarr = prev.map((x, i) => {
                 if (i === idx) {
