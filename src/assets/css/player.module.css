@@ -54,7 +54,6 @@ body {
     width: 400px;
     display: flex;
     justify-content: space-between;
-    /* color: white; */
 }
 button {
     background-color: transparent;
