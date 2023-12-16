@@ -30,7 +30,6 @@ body {
     height: 4px;
     border-radius: 5px;
     background-image: linear-gradient(#f53192, #f53192);
-    background-size: 70% 100%;
     background-repeat: no-repeat;
   }
   
@@ -59,4 +58,5 @@ button {
     background-color: transparent;
     color: white;
     border: none;
+    cursor: pointer;
 }
