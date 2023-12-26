@@ -10,7 +10,7 @@ export default function Clock() {
         const intervalId = setInterval(() => {
             const date = new Date();
             setTime({
-                minutes: date.getMinutes(),
+                minutes: String(date.getMinutes()).padStart(2, '0'),   // added by Rik to round up the  
                 hours: date.getHours(),
                 seconds: date.getSeconds()
             })
